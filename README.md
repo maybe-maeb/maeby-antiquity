@@ -17,7 +17,7 @@
 
 <a href="https://discord.gg/gleep">![badge](https://img.shields.io/badge/discord-262622?style=for-the-badge&logo=discord&logoColor=262622&logoSize=auto&color=e2e2d3) </a>
 <a href="https://ko-fi.com/diinki">![badge](https://img.shields.io/badge/tip-262622?style=for-the-badge&logo=kofi&logoColor=262622&logoSize=auto&color=e2e2d3) </a>
-<a href="https://youtube.com/@diinkikot">![badge](https://img.shields.io/badge/youtube_video-262622?style=for-the-badge&logo=youtube&logoColor=262622&logoSize=auto&color=e2e2d3) </a>
+<a href="https://www.youtube.com/watch?v=qOoWQeIGKiA">![badge](https://img.shields.io/badge/youtube_video-262622?style=for-the-badge&logo=youtube&logoColor=262622&logoSize=auto&color=e2e2d3) </a>
 
 </div>
 
