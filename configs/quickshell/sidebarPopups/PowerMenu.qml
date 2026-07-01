@@ -15,21 +15,21 @@ PanelWindow {
     property double positionX: 0
     property int popupState: Config.SidebarPopup.None
     WlrLayershell.layer: WlrLayer.Overlay
-
+    exclusionMode: ExclusionMode.Ignore
     visible: popupState == Config.SidebarPopup.PowerMenu ? true : false
     WlrLayershell.namespace: "diinki_celestialantiquity:bars"
 
     color: Qt.rgba(0, 0, 0, 0)
     anchors {
-        left: true
+        //left: true
         top: true
         //right: true
         //bottom: true
     }
 
     margins {
-        left: positionX + 20
-        top: positionY + height / 3 + 20
+        left: 0
+        top: 100
         bottom: 0
         right: 0
     }

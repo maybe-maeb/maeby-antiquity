@@ -22,17 +22,17 @@ PanelWindow {
     property double positionX: 0
     property int popupState: Config.SidebarPopup.None
     property var closeCallback: function () {}
-    WlrLayershell.layer: WlrLayer.Overlay
 
+    WlrLayershell.layer: WlrLayer.Overlay
+    exclusionMode: ExclusionMode.Ignore
     WlrLayershell.namespace: "diinki_celestialantiquity:bars"
 
     anchors {
-        left: true
         top: true
     }
     margins {
-        left: positionX
-        top: positionY + height / 3 + 20
+        left: 0
+        top: 100
         bottom: 0
         right: 0
     }

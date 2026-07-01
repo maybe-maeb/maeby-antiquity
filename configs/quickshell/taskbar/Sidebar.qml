@@ -20,7 +20,7 @@ Scope {
             id: root
             required property var modelData
 
-            // This is a "tap outside of popup to clise it" functionality. Might abstract it later.
+            // This is a "tap outside of popup to close it" functionality. Might abstract it later.
             PanelWindow {
                 id: closerPanel
                 screen: root.modelData

@@ -5,7 +5,7 @@ import Quickshell.Io
 
 Singleton {
     id: root
-
+    
     //*=======================================================================*/
     // READ THIS NOTE:
     // Simply add to this list in order to create your
@@ -45,7 +45,16 @@ Singleton {
             "elementAir": "#ccdde2",
             "elementWater": "#6f8ebc",
             "elementEarth": "#473e39",
-            "elementFire": "#c15555"
+            "elementFire": "#c15555",
+
+            mercuryColor: '#929191',
+            venusColor: '#c18a24',
+            earthColor: '#4059b1',
+            marsColor: '#c05b20',
+            jupiterColor: '#dab67f',
+            saturnColor: '#d1c46b',
+            uranusColor: '#88d2c0',
+            neptuneColor: '#7b8bc3'
         },
         "eris": {
             "base": "#1b1c1e",
@@ -78,7 +87,16 @@ Singleton {
             "elementAir": "#ccdde2",
             "elementWater": "#6f8ebc",
             "elementEarth": "#473e39",
-            "elementFire": "#c15555"
+            "elementFire": "#c15555",
+
+            mercuryColor: '#929191',
+            venusColor: '#c18a24',
+            earthColor: '#4059b1',
+            marsColor: '#c05b20',
+            jupiterColor: '#dab67f',
+            saturnColor: '#d1c46b',
+            uranusColor: '#88d2c0',
+            neptuneColor: '#7b8bc3'
         },
         "priapus": {
             "base": "#1f211e",
@@ -111,7 +129,16 @@ Singleton {
             "elementAir": "#c7e0ca",
             "elementWater": "#6f8ebc",
             "elementEarth": "#3e3f2f",
-            "elementFire": "#c15555"
+            "elementFire": "#c15555",
+
+            mercuryColor: '#929191',
+            venusColor: '#c18a24',
+            earthColor: '#4059b1',
+            marsColor: '#c05b20',
+            jupiterColor: '#dab67f',
+            saturnColor: '#d1c46b',
+            uranusColor: '#88d2c0',
+            neptuneColor: '#7b8bc3'
         },
         "eros": {
             "base": "#15101c",
@@ -144,7 +171,16 @@ Singleton {
             "elementAir": "#ccdde2",
             "elementWater": "#6f8ebc",
             "elementEarth": "#473e39",
-            "elementFire": "#c15555"
+            "elementFire": "#c15555",
+
+            mercuryColor: '#929191',
+            venusColor: '#c18a24',
+            earthColor: '#4059b1',
+            marsColor: '#c05b20',
+            jupiterColor: '#dab67f',
+            saturnColor: '#d1c46b',
+            uranusColor: '#88d2c0',
+            neptuneColor: '#7b8bc3'
         },
         "hades": {
             "base": "#181818",
@@ -177,9 +213,74 @@ Singleton {
             "elementAir": "#cccccc",
             "elementWater": "#66929e",
             "elementEarth": "#423f3d",
-            "elementFire": "#c15555"
+            "elementFire": "#c15555",
+
+            mercuryColor: '#929191',
+            venusColor: '#c18a24',
+            earthColor: '#4059b1',
+            marsColor: '#c05b20',
+            jupiterColor: '#dab67f',
+            saturnColor: '#d1c46b',
+            uranusColor: '#88d2c0',
+            neptuneColor: '#7b8bc3'
         }
     }
+
+    property real planetSize: 85
+    property real sunSize: 150
+
+    //Keep distance underneath ~690 on 1440p monitors to keep it on the screen
+    //Keep distance above 105 on 1440p monitors to keep it outside of the sun
+    //If you want to make sure no planets collide, keep them at least 45 units apart
+
+    //If you want every planet to be the same distance apart, make each planet 83 units further from the previous (so if mercury was at 105, make venus 178)
+
+    property real mercuryDistance: 105
+    property real venusDistance: 188
+    property real earthDistance: 271
+    property real marsDistance: 354
+    property real jupiterDistance: 437
+    property real saturnDistance: 520
+    property real uranusDistance: 603
+    property real neptuneDistance: 686
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+        //You can choose how you'd like your planets organized. Leave whichever version you want uncommented
+        //Angle is 0-360 (0 being above the sun, 90 being to the right, etc)
+
+            //Fixed
+                /*property real mercuryAngle: 0
+                property real venusAngle: 0
+                property real earthAngle: 0
+                property real marsAngle: 0
+                property real jupiterAngle: 0
+                property real saturnAngle: 0
+                property real uranusAngle: 0
+                property real neptuneAngle: 0*/
+
+            //Real-Time (adjust targetDate below so orbits are relative to your chosen date. Default is Jan 1 2000)
+                property real mercuryAngle: angleByOrbitDuration(87.9693)
+                property real venusAngle: angleByOrbitDuration(224.7008)
+                property real earthAngle: angleByOrbitDuration(365.2564)
+                property real marsAngle: angleByOrbitDuration(686.9796)
+                property real jupiterAngle: angleByOrbitDuration(4,332.5890)
+                property real saturnAngle: angleByOrbitDuration(10,759.2200)
+                property real uranusAngle: angleByOrbitDuration(30,685.4000)
+                property real neptuneAngle: angleByOrbitDuration(60,189.0000)
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    //Whenever a planet is back to where it was on this date, it will be directly above the sun.
+    //If you set it to the date you're reading his, all planets will be above the sun in a straight line.
+        //88 days from now, Mercury would be back above the Sun because its orbit is 88 days, 
+        //Earth would be to the right because it would only be about a quarter of the way through its orbit
+    //If you set this to your birthday, if a planet was straight up, that would mean it was back to where it was when you were born
+    property date targetDate: new Date(2000, 0, 1) //Months are 0-indexed, so Jan is 0, Feb is 1, etc
+
+    //Only used if orbitPathColorOverride is (0,0,0,0)
+    property real orbitPathTransparency: 0.4
+
+    //If you want every orbit path to be the same color, update this. If this is (0,0,0,0), orbit paths will match the color of the planet
+    property color orbitPathColorOverride: Qt.rgba(0, 0, 0, 0)
 
     enum SystemPopup {
         Startmenu,
@@ -192,6 +293,7 @@ Singleton {
         FavoriteAppsMenu,
         ThemingMenu,
         MainMenu,
+        AppLauncher,
         None
     }
     // TODO: Finish adding all the other widgets
@@ -375,5 +477,23 @@ Singleton {
                 }
             }
         }
+    }
+
+
+
+
+    //Planet positioning stuff
+
+    function daysSince(dateInput) {
+        var past = (dateInput instanceof Date) ? dateInput : new Date(dateInput);
+        var now = new Date();
+
+        past.setHours(0,0,0,0);
+        now.setHours(0,0,0,0);
+
+        return Math.floor((now - past) / (1000 * 60 * 60 * 24));
+    }
+    function angleByOrbitDuration(duration){
+        return (daysSince(targetDate) / duration) * 360
     }
 }

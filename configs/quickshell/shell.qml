@@ -53,10 +53,20 @@ Scope {
         source: "fonts/DOMINICA.TTF"
     }
 
+    //???
     Widgets.WidgetScreen {}
-    Taskbar.RadialTaskbar {}
-    Taskbar.Sidebar {}
-    Taskbar.Bar {}
+
+    //Bottom of the screen, has running processes
+    //Taskbar.RadialTaskbar {}
+
+    //Has the sun, planets, etc
+    //Taskbar.Sidebar {}
+
+    //Top of screen, displays time, etc
+    //Taskbar.Bar {}
+
+    //Custom
+    Taskbar.OrbitSystem {}
 
     Popups.SettingsWindow {
         id: settingsWindow
