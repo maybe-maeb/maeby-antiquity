@@ -117,6 +117,7 @@ There are some features I'm planning on working on very soon. These include:
 There are some more features I've considered, but haven't dedicated myself to doing yet. These include:
 * Planet labels
 * Information panel about each planet, including how many orbits they've completed since your chosen date
+* KDE Theme update (window decoration, application style, icons, etc.)
 
 Please let me know if you have more ideas for features!
 </div>
